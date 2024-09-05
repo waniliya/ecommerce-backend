@@ -1,0 +1,129 @@
+
+//GET ALL PRODUCT
+GET http://localhost:5000/allproducts
+
+//GET DATA PRODUCT BY ID
+###
+GET http://localhost:5000/findproduct/2
+
+
+//REGISTER NEW PRODUCT
+
+###
+POST http://localhost:5000/addproduct
+Content-Type: application/json
+
+{
+    "name": "speakername 1",
+    "category": "speaker",
+    "color":"white",
+    "price":"32",
+    "totalofstocks":"200",
+    "description":"Round speaker",
+    "image":"http://localhost:5000/public/images/image_1723108494912.JPG"
+}
+
+###
+PATCH  http://localhost:5000/product/65d6f8b88757d62602954323
+Content-Type: application/json
+{
+    "name": "Unisex tshirt men",
+    "category": "tshirt",
+    "type":"cotton",
+    "color":"white",
+    "description":"Round neck tshirt",
+    "price": 30,
+    "size":["S","M","L","XL","XXL","XS"],
+    "highlight":["Casual tshirt","Round neck"],
+    "totalofstocks":"500"
+    
+}
+
+
+//DELETE PRODUCT BY ID
+//ADMIN
+###
+DELETE http://localhost:5000/deleteproduct/2
+
+
+//GET ALL USER INFORMATION
+//ADMIN ONLY
+###
+GET http://localhost:5000/alluser
+
+//GET DATA USER BY ID
+//ADMIN
+###
+GET http://localhost:5000/user/65d47df380f8fd03c44f93c9
+
+
+//REGISTER NEW USER
+//PUBLIC
+###
+POST http://localhost:5000/newuser
+Content-Type: application/json
+
+{
+    "name":"admin11",
+    "email":"admintest1@gmail.com",
+    "password":"1234",
+    "confPassword":"1234",
+    "address":"desa",
+    "phoneNum":"019223",
+    "isAdmin":"true"
+}
+
+
+//LOGIN USER
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"admintest1@gmail.com",
+    "password":"1234",
+    "confPassword":"1234"
+}
+
+
+//LOGOUT
+###
+DELETE http://localhost:5000/logout
+
+###
+GET http://localhost:5000/getuser
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmI4YTFmZWRjOTJmNTdlYWZiNTMwYTQiLCJuYW1lIjoiNjZiOGExZmVkYzkyZjU3ZWFmYjUzMGE0IiwiZW1haWwiOiI2NmI4YTFmZWRjOTJmNTdlYWZiNTMwYTQiLCJpYXQiOjE3MjQ1OTk0MDcsImV4cCI6MTcyNDY4NTgwN30.avG33ia0uE8phSTCivT_m9bZIgMrSAdikZ4nlXDf97w
+###
+GET http://localhost:5000/token
+
+###
+GET http://localhost:5000/getcart
+###
+POST http://localhost:5000/loginAdmin
+Content-Type: application/json
+
+{
+    "email":"admin3@gmail.com",
+    "password":"1234"
+    
+}
+
+###
+GET http://localhost:5000/latest
+###
+GET http://localhost:5000/findproduct/66b5d67c4a8b9c117f885895
+
+###
+POST http://localhost:5000/addtocart
+Content-Type: application/json
+
+{
+    "itemId":"1"
+    
+    
+}
+
+###
+GET http://localhost:5000/fetchuser
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmI4YTFmZWRjOTJmNTdlYWZiNTMwYTQiLCJuYW1lIjoiNjZiOGExZmVkYzkyZjU3ZWFmYjUzMGE0IiwiZW1haWwiOiI2NmI4YTFmZWRjOTJmNTdlYWZiNTMwYTQiLCJpYXQiOjE3MjQ0MDc2ODksImV4cCI6MTcyNDQ5NDA4OX0.Kr7ALuBZFPq-WxlEO8SrwHF7xaEcIZ13hyLgfAYiLwc
+
